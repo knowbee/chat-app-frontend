@@ -1,7 +1,6 @@
 env:
   global:
     - SKIP_PREFLIGHT_CHECK=true
-sudo: false
 language: node_js
 node_js:
   - "10.15.1"
