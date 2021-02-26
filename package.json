@@ -26,6 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
+    "test:coverage": "jest --watchAll=false \"-- --coverage\"",
+    "test:CI": "CI=true jest \"-- --coverage\"",
+    "coveralls": "cat coverage/lcov.info | coveralls",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
