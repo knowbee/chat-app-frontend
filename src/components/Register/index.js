@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./register.scss";
 import Layout from "../Layout";
-
+import { useHistory } from "react-router-dom";
 function Register() {
+  const history = useHistory();
+
+  const goToLogin = () => {
+    history.push("/login");
+  };
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <Layout>
       <div className="registration-form">
@@ -13,9 +23,24 @@ function Register() {
           </ul>
         </div>
         <form>
-          <input type="text" placeholder="Your name"></input>
-          <input type="text" placeholder="E-mail"></input>
-          <input type="text" placeholder="Password"></input>
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            placeholder="Your name"
+          ></input>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            placeholder="E-mail"
+          ></input>
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="text"
+            placeholder="Password"
+          ></input>
           <div className="terms-conditions">
             <input type="checkbox"></input>
             <p>
@@ -25,7 +50,7 @@ function Register() {
           <button className="registration-button" type="submit">
             Registration
           </button>
-          <button className="signin-button" type="submit">
+          <button onClick={goToLogin} className="signin-button" type="submit">
             Sign in
           </button>
         </form>
