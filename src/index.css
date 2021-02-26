@@ -13,3 +13,7 @@ body::-webkit-scrollbar-thumb {
     background-color: #2aa2fa;
     border-radius: 20px;
 }
+
+*:focus {
+  outline: 0 !important;
+}
