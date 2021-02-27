@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { submitRegister } from "../../redux/actions";
 import "./register.scss";
 import Layout from "../Layout";
 import { useHistory } from "react-router-dom";
-function Register() {
+import axios from "axios";
+const Register = ({ onSubmit }) => {
   const history = useHistory();
 
   const goToLogin = () => {
@@ -13,6 +16,12 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const onSubmitButton = (e) => {
+    e.preventDefault();
+    onSubmit({ name, email, password }).then((res) => {
+      console.log(res);
+    });
+  };
   return (
     <Layout>
       <div className="registration-form">
@@ -38,7 +47,7 @@ function Register() {
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            type="text"
+            type="password"
             placeholder="Password"
           ></input>
           <div className="terms-conditions">
@@ -47,7 +56,7 @@ function Register() {
               I accept the <span>terms and conditions</span>
             </p>
           </div>
-          <button className="registration-button" type="submit">
+          <button onClick={onSubmitButton} className="registration-button">
             Registration
           </button>
           <button onClick={goToLogin} className="signin-button" type="submit">
@@ -57,6 +66,26 @@ function Register() {
       </div>
     </Layout>
   );
-}
+};
 
-export default Register;
+export const mapStateToProps = (state) => ({
+  name: state.register.name,
+  email: state.register.email,
+  password: state.register.password,
+  errors: state.register.errors,
+  submitting: state.register.submitting,
+});
+
+export const mapDispatchToProps = (dispatch, props) => ({
+  onSubmit: ({ name, email, password }) =>
+    dispatch(
+      submitRegister({
+        name,
+        email,
+        password,
+        props,
+      })
+    ),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
