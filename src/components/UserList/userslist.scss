@@ -1,0 +1,17 @@
+.contact {
+  width: 100%;
+  display: flex;
+
+  .contact-info {
+    width: 100%;
+
+    h4 {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    p {
+      color: #222;
+    }
+  }
+}

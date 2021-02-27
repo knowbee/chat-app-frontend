@@ -1,0 +1,54 @@
+.chat {
+  overflow-x: hidden;
+
+  .profile-picture{
+    border-radius: 68%;
+    margin-right: 20px;
+  }
+  .header {
+    position: fixed;
+    width: 100vw;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+
+    .dropdown-button {
+      position: fixed;
+      right: 1rem;
+      top: 0.8rem;
+      cursor: pointer;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      display: none;
+    }
+  }
+  .chat-body {
+    display: flex;
+  }
+}
+
+@media (max-width: 999px) {
+  .header {
+    .dropdown-button {
+      display: block !important;
+      .sidebar {
+        position: fixed;
+        left: 1rem;
+        background-color: white;
+        box-shadow: 10px 10px 50px #888888;
+        z-index: 99;
+      }
+    }
+  }
+
+  .chat-body {
+    .sidebar {
+      display: none;
+    }
+
+    .message {
+      width: 100% !important;
+      margin-left: 0rem;
+    }
+  }
+}
