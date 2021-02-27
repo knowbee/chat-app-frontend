@@ -1,0 +1,67 @@
+.message {
+  padding: 0rem 1.5rem;
+  width: 50%;
+  border-right: 1px solid #ddd;
+  margin-left: 345px;
+  .message-card {
+    display: flex;
+    margin-bottom: 5rem;
+    div {
+      p {
+        background-color: #ddd;
+        padding: 1rem;
+        color: #555;
+        width: 15rem;
+        margin-bottom: 0.2rem;
+      }
+
+      small {
+        color: #aaa;
+      }
+    }
+  }
+  .message-card-one {
+    float: right;
+    margin-top: -8rem;
+    margin-bottom: 1.8rem;
+    div {
+      p {
+        background-color: #2aa2fa;
+        color: #fff;
+        padding: 1rem;
+        width: 15rem;
+        margin-bottom: 0.2rem;
+      }
+      small {
+        float: right;
+      }
+    }
+  }
+
+  .message-input {
+    padding: 1rem;
+    width: 100%;
+    margin-left: -1rem;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    border-top: 1px solid #ddd;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .send-icon {
+    position: relative;
+    right: -39rem;
+    bottom: 1.8rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 999px) {
+  .message {
+    border: none;
+  }
+}
