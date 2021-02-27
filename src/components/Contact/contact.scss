@@ -1,0 +1,30 @@
+.contact-info {
+  margin-top: 2rem;
+  width: 25%;
+  position: fixed;
+  right: -54px;
+  .contact-info-header {
+        padding-right: 40px;
+        text-align: center;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+  }
+}
+
+.contact-info-details {
+  padding: 1rem;
+  h4 {
+    font-weight: 600;
+  }
+
+  p {
+    color: #555;
+  }
+}
+
+@media (max-width: 999px) {
+  .contact-info {
+    display: none;
+  }
+}
