@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { submitRegister } from "../../redux/actions";
 import "./register.scss";
 import Layout from "../Layout";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 const Register = ({ onSubmit }) => {
   const history = useHistory();
 
