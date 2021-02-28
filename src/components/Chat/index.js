@@ -1,63 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./chat.scss";
+import { connect } from "react-redux";
 import Message from "../Message/index";
 import ConversationsList from "../ConversationsList/index";
 import Contact from "../Contact/index";
+import { fetchUsers } from "../../redux/actions";
 
-function Chat() {
+function Chat({ fetchUsers, chats }) {
   const [showSidebar, setShowSidebar] = React.useState(false);
   const Toggle = () => setShowSidebar(true);
 
-  const Conversations = [
-    {
-      id: 1,
-      name: "Kwizera Elvis",
-      text: "Lorem ipsum dolor sit amet",
-      time: "09:30",
-      image:
-        "https://images.unsplash.com/photo-1614174568206-7620823e6aee?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      id: 2,
-      name: "Kalisa Rome",
-      text: "Lorem ipsum dolor sit amet",
-      time: "09:30",
-      image:
-        "https://images.unsplash.com/photo-1614174568206-7620823e6aee?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      id: 3,
-      name: "Ishimwe Cynthia",
-      text: "Lorem ipsum dolor sit amet",
-      time: "09:30",
-      image:
-        "https://images.unsplash.com/photo-1614174568206-7620823e6aee?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      id: 4,
-      name: "Rugwiro David",
-      text: "Lorem ipsum dolor sit amet",
-      time: "09:30",
-      image:
-        "https://images.unsplash.com/photo-1614174568206-7620823e6aee?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      id: 5,
-      name: "Umwali Anet",
-      text: "Lorem ipsum dolor sit amet",
-      time: "09:30",
-      image:
-        "https://images.unsplash.com/photo-1614174568206-7620823e6aee?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      id: 6,
-      name: "Karangwa Eric",
-      text: "Lorem ipsum dolor sit amet",
-      time: "09:30",
-      image:
-        "https://images.unsplash.com/photo-1614174568206-7620823e6aee?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    },
-  ];
+  useEffect(() => {
+    fetchUsers().then((res) => {});
+  }, []);
 
   return (
     <div className="chat">
@@ -95,11 +50,11 @@ function Chat() {
               </g>
             </g>
           </svg>
-          {showSidebar ? <ConversationsList /> : null}
+          {showSidebar ? <ConversationsList chats={chats} /> : null}
         </button>
       </div>
       <div className="chat-body">
-        <ConversationsList conversations={Conversations} />
+        <ConversationsList chats={chats} />
         <Message />
         <Contact />
       </div>
@@ -107,4 +62,13 @@ function Chat() {
   );
 }
 
-export default Chat;
+const mapStateToProps = ({ users: { fetching, chats, errors } }) => ({
+  fetching,
+  chats,
+  errors,
+});
+
+export const mapDispatchToProps = (dispatch) => ({
+  fetchUsers: () => dispatch(fetchUsers()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Chat);

@@ -1,8 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState } from "react";
 import "./sidebar.scss";
+import TimeAgo from "timeago-react";
 
-function Sidebar({ conversations }) {
+function Sidebar({ chats }) {
+  const [selectedUser, setSelectedUser] = useState();
+  const selectChat = (chat) => {
+    setSelectedUser(chat);
+  };
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -28,19 +33,29 @@ function Sidebar({ conversations }) {
       </div>
       <div className="sidebar-body">
         <ul>
-          {conversations.map((item) => (
-            <li key={item.id} id="link">
-              <a href="#link">
-                <img src={item.image} alt={item.name} />
-                <div>
-                  <span>
-                    <h4>{item.name}</h4>
-                    <small>{item.time}</small>
-                  </span>
-                  <p>{item.text}</p>
+          {chats.map((item) => (
+            <a
+              key={item.id}
+              id="link"
+              onClick={() => {
+                selectChat(item);
+              }}
+            >
+              <div
+                className={
+                  selectedUser && selectedUser.id === item.id
+                    ? "active-chat"
+                    : ""
+                }
+              >
+                <div className="chat">
+                  <h4>{item.name}</h4>
+                  <div>
+                    <TimeAgo datetime={item.joined_at} locale="en_US" />
+                  </div>
                 </div>
-              </a>
-            </li>
+              </div>
+            </a>
           ))}
         </ul>
       </div>

@@ -63,6 +63,19 @@
   }
   .sidebar-body {
     margin-left: -0.8rem;
+    
+    .active-chat{
+      background-color: #EDEDED;
+    }
+    .chat{
+      display: flex;
+      width: 100% !important;
+      padding: 1px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+    }
     ul {
       margin: 0rem;
       padding: 0rem;
@@ -70,7 +83,7 @@
       #link {
         list-style: none;
         &:target {
-          background-color: #bbb;
+          // background-color: #bbb;
         }
         cursor: pointer;
         a {
