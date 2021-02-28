@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register page loads with default state 1`] = `
+<div
+  className="layout"
+>
+  <div
+    className="left-side"
+  >
+    <div
+      className="middle-container"
+    >
+      <img
+        alt="logo"
+        src="https://iili.io/fi0IUb.png"
+      />
+      <p>
+        stay in touch with your friends anytime and anywhere
+      </p>
+    </div>
+  </div>
+  <div
+    className="right-side"
+  >
+    <div
+      className="registration-form"
+    >
+      <div
+        className="registration-form-header"
+      >
+        <img
+          alt="logo-2"
+          src="https://iili.io/fi0ROQ.png"
+        />
+        <ul>
+          <li>
+            Registration
+          </li>
+        </ul>
+      </div>
+      <form>
+        <input
+          onChange={[Function]}
+          placeholder="Your name"
+          type="text"
+          value=""
+        />
+        <input
+          onChange={[Function]}
+          placeholder="E-mail"
+          type="text"
+          value=""
+        />
+        <input
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <div
+          className="terms-conditions"
+        >
+          <input
+            type="checkbox"
+          />
+          <p>
+            I accept the 
+            <span>
+              terms and conditions
+            </span>
+          </p>
+        </div>
+        <button
+          className="registration-button"
+          onClick={[Function]}
+        >
+          Registration
+        </button>
+        <button
+          className="signin-button"
+          onClick={[Function]}
+          type="submit"
+        >
+          Sign in
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
