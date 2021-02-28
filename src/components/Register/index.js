@@ -18,7 +18,9 @@ const Register = ({ onSubmit }) => {
   const onSubmitButton = (e) => {
     e.preventDefault();
     onSubmit({ name, email, password }).then((res) => {
-      console.log(res);
+      if (res.status === 201) {
+        history.push("/login");
+      }
     });
   };
   return (

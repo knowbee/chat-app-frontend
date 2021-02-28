@@ -31,7 +31,7 @@ export const submitRegister = ({ name, email, password }) => (dispatch) => {
   return axios
     .post("/auth/register", { name, email, password })
     .then((data) => {
-      console.log(data);
+      return data;
     })
     .catch((err) => {
       dispatch(submitRegisterFailure({ message: err.message }));
