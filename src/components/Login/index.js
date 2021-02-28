@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./login.scss";
+import { connect } from "react-redux";
 import Layout from "../Layout";
 import { useHistory } from "react-router-dom";
-
-function Login() {
+import { loginUser } from "../../redux/actions";
+function Login({ login }) {
   const history = useHistory();
 
   const goToRegister = () => {
@@ -12,6 +13,15 @@ function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const onSubmitButton = (e) => {
+    e.preventDefault();
+    login({ email, password }).then((res) => {
+      if (res.status === 200) {
+        history.push("/chat");
+      }
+    });
+  };
 
   return (
     <Layout>
@@ -36,7 +46,11 @@ function Login() {
             placeholder="Password"
           ></input>
 
-          <button className="login-button" type="submit">
+          <button
+            onClick={onSubmitButton}
+            className="login-button"
+            type="submit"
+          >
             Login
           </button>
           <button
@@ -51,5 +65,13 @@ function Login() {
     </Layout>
   );
 }
+const mapStateToProps = ({ login: { submitting, credentials, error } }) => ({
+  submitting,
+  credentials,
+  error,
+});
 
-export default Login;
+export const mapDispatchToProps = (dispatch) => ({
+  login: ({ email, password }) => dispatch(loginUser({ email, password })),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

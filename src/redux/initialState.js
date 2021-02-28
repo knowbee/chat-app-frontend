@@ -7,4 +7,11 @@ module.exports = {
     password: "",
     errors: {},
   },
+  login: {
+    submitting: false,
+    credentials: {
+      email: "",
+      password: "",
+    },
+  },
 };
