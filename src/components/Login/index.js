@@ -42,7 +42,7 @@ function Login({ login }) {
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            type="text"
+            type="password"
             placeholder="Password"
           ></input>
 
