@@ -18,6 +18,11 @@ module.exports = {
     password: "",
     errors: {},
   },
+  users: {
+    fetching: false,
+    chats: [],
+    errors: {},
+  },
   login: {
     submitting: false,
     credentials: {
