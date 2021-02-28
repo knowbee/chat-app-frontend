@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page loads with default state 1`] = `
+<div
+  className="layout"
+>
+  <div
+    className="left-side"
+  >
+    <div
+      className="middle-container"
+    >
+      <img
+        alt="logo"
+        src="https://iili.io/fi0IUb.png"
+      />
+      <p>
+        stay in touch with your friends anytime and anywhere
+      </p>
+    </div>
+  </div>
+  <div
+    className="right-side"
+  >
+    <div
+      className="login-form"
+    >
+      <div
+        className="login-form-header"
+      >
+        <img
+          alt="logo-2"
+          src="https://iili.io/fi0ROQ.png"
+        />
+        <ul>
+          <li>
+            Login
+          </li>
+        </ul>
+      </div>
+      <form>
+        <input
+          onChange={[Function]}
+          placeholder="E-mail"
+          type="text"
+          value=""
+        />
+        <input
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <button
+          className="login-button"
+          onClick={[Function]}
+          type="submit"
+        >
+          Login
+        </button>
+        <button
+          className="register-button"
+          onClick={[Function]}
+          type="submit"
+        >
+          Create account
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
