@@ -1,10 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
-import Modal from "../Modal/index";
+import React from "react";
 import "./sidebar.scss";
 
 function Sidebar({ conversations }) {
-  const [show, setShow] = useState(false);
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -25,23 +23,7 @@ function Sidebar({ conversations }) {
         </svg>
         <div className="active">
           {" "}
-          <p>Active</p>
-          <button onClick={() => setShow(true)}>
-            <svg
-              width="10"
-              height="10"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15.91 9.19H9.52V15.67H6.97V9.19H0.61V6.88H6.97V0.369998H9.52V6.88H15.91V9.19Z"
-                fill="#040404"
-                fillOpacity="0.33"
-              />
-            </svg>
-          </button>
-          <Modal onClose={() => setShow(false)} show={show} />
+          <p>Messages</p>
         </div>
       </div>
       <div className="sidebar-body">
