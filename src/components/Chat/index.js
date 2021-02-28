@@ -67,12 +67,7 @@ function Chat() {
           src="https://iili.io/fi0ROQ.png"
           alt=""
         />
-        <img
-          style={{ width: "40px", height: "50px", borderRadius: "50%" }}
-          src="https://images.unsplash.com/photo-1614174568206-7620823e6aee?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-          alt=""
-          className="profile-picture"
-        />
+        <button className="logout-button">logout</button>
         <button className="dropdown-button" onClick={Toggle}>
           <svg
             version="1.1"

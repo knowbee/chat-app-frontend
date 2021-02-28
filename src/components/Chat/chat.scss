@@ -1,9 +1,20 @@
 .chat {
   overflow-x: hidden;
 
-  .profile-picture{
-    border-radius: 68%;
-    margin-right: 20px;
+  .logout-button{
+    background-color: #2aa2fa;
+    color: #fff;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 100px;
+    border: none;
+    margin-right: 1rem;
+    margin-top: .5rem;
+    cursor: pointer;
+    font-size: .9rem;
+  }
+  .logout-button:hover{
+    opacity: .8;
   }
   .header {
     position: fixed;
