@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      # run tests!
+      - run:
+          name: run tests
+          command: |
+            export COVERALLS_REPO_TOKEN=ry9RCtdiLZ2euRWOMsHQUBxtahMdBUdcM >> $BASH_ENV
+            npm test -- -u --watchAll=false
+            npm run test:coverage
+            npm run coveralls
+
+      - store_artifacts:
+          path: coverage
+          destination: coverage
