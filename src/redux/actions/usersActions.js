@@ -21,15 +21,16 @@ export const fetchingUsersSuccess = (payload) => ({
 });
 
 export const fetchUsers = () => (dispatch) => {
+  const token = localStorage.getItem("token");
   dispatch(fetchingUsers());
   return axios
-    .get("/users", {})
+    .get("/users", {}, token)
     .then((res) => {
       dispatch(fetchingUsersSuccess(res.data.data));
       return res;
     })
     .catch((err) => {
-      dispatch(fetchingUsersFailed());
+      dispatch(fetchingUsersFailed(err));
       return err;
     });
 };
