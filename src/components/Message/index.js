@@ -7,7 +7,7 @@ import Moment from "react-moment";
 import sendIcon from "./send.svg";
 import useSound from "use-sound";
 import notification from "./message.mp3";
-
+import TimeAgo from "timeago-react";
 function Message({ receiver_id, send, messages, fetchMessages }) {
   const [message, setMessage] = useState("");
   const [sender_id, setSenderId] = useState(null);
@@ -51,9 +51,7 @@ function Message({ receiver_id, send, messages, fetchMessages }) {
                   <div>
                     <p>{message.message}</p>
                     <small>
-                      <Moment format="MMMM Do, h:mm:ss a">
-                        {message.created_at}
-                      </Moment>
+                      <TimeAgo datetime={message.created_at}></TimeAgo>
                     </small>
                   </div>
                 </div>
@@ -64,9 +62,7 @@ function Message({ receiver_id, send, messages, fetchMessages }) {
                   <div>
                     <p>{message.message}</p>
                     <small>
-                      <Moment format="MMMM Do YYYY, h:mm:ss a">
-                        {message.created_at}
-                      </Moment>
+                      <TimeAgo datetime={message.created_at}></TimeAgo>
                     </small>
                   </div>
                 </div>
