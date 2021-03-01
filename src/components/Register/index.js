@@ -51,12 +51,6 @@ const Register = ({ onSubmit }) => {
             type="password"
             placeholder="Password"
           ></input>
-          <div className="terms-conditions">
-            <input type="checkbox"></input>
-            <p>
-              I accept the <span>terms and conditions</span>
-            </p>
-          </div>
           <button onClick={onSubmitButton} className="registration-button">
             Registration
           </button>

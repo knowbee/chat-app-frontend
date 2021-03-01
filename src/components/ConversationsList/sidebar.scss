@@ -2,14 +2,15 @@
   position: fixed;
   width: 345px;
   border-right: 1px solid #ddd;
-  margin-top: 3.5rem;
+  margin-top: 4rem;
   padding-left: 0.8rem;
   overflow-y: scroll;
   overflow-x: hidden;
   top: 0;
+
   bottom: 0;
   &::-webkit-scrollbar {
-    width: 3px; /* width of the entire scrollbar */
+    width: 1px; /* width of the entire scrollbar */
   }
 
   &::-webkit-scrollbar-thumb {
@@ -56,13 +57,14 @@
         color: #2aa2fa;
       }
 
-      svg {
+      img {
         margin-top: 0.5rem;
       }
     }
   }
   .sidebar-body {
     margin-left: -0.8rem;
+    padding: 4px;
     
     .active-chat{
       background-color: #EDEDED;

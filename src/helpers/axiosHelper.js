@@ -3,7 +3,6 @@ import axios from "axios";
 
 const APP_URL_BACKEND = process.env.REACT_APP_BACKEND_URL;
 
-let token = localStorage.getItem("token");
 let config = {
   headers: {
     "Content-Type": "application/json;charset=UTF-8",
@@ -13,7 +12,7 @@ let config = {
 };
 
 class AxiosHelper {
-  static post = (path, data) => {
+  static post = (path, data, token) => {
     config["headers"]["authorization"] = token;
     return new Promise((resolve, reject) => {
       return axios
@@ -26,7 +25,7 @@ class AxiosHelper {
         });
     });
   };
-  static patch = (path, data) => {
+  static patch = (path, data, token) => {
     config["headers"]["authorization"] = token;
     return new Promise((resolve, reject) => {
       return axios
@@ -39,7 +38,7 @@ class AxiosHelper {
         });
     });
   };
-  static delete = (path, data) => {
+  static delete = (path, data, token) => {
     config["headers"]["authorization"] = token;
     return new Promise((resolve, reject) => {
       return axios
@@ -52,7 +51,7 @@ class AxiosHelper {
         });
     });
   };
-  static get = (path, data) => {
+  static get = (path, data, token) => {
     config["headers"]["authorization"] = token;
     return new Promise((resolve, reject) => {
       return axios

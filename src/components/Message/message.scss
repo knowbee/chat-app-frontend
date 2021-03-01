@@ -1,11 +1,11 @@
 .message {
   padding: 0rem 1.5rem;
-  width: 50%;
-  border-right: 1px solid #ddd;
+  width: 70%;
   margin-left: 345px;
+
   .message-card {
     display: flex;
-    margin-bottom: 5rem;
+
     div {
       p {
         background-color: #ddd;
@@ -20,10 +20,11 @@
       }
     }
   }
+
   .message-card-one {
-    float: right;
-    margin-top: -8rem;
-    margin-bottom: 1.8rem;
+    display: flex;
+    justify-content: flex-end;
+
     div {
       p {
         background-color: #2aa2fa;
@@ -32,13 +33,16 @@
         width: 15rem;
         margin-bottom: 0.2rem;
       }
+
       small {
         float: right;
       }
     }
   }
 
-  .message-input {
+  .input-container {
+    display: flex;
+    justify-content: space-between;
     padding: 1rem;
     width: 100%;
     margin-left: -1rem;
@@ -50,13 +54,25 @@
     &:focus {
       outline: none;
     }
+    input{
+      width: 80%;
+      border-top: none;
+      border-left: none;
+      border-bottom: none;
+      border-right: none;
+    }
   }
 
   .send-icon {
     position: relative;
-    right: -39rem;
-    bottom: 1.8rem;
+    right: 10rem;
+    bottom:1rem;
+    padding-top: 1rem;
     cursor: pointer;
+  }
+
+  .no-chat {
+    text-align: center;
   }
 }
 
