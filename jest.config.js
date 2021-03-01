@@ -13,7 +13,7 @@ module.exports = {
     "coverage",
     "node_modules",
     "src/index.js",
-    "src/helpers/fetchAPI.js",
+    "src/helpers/axiosHelper.js",
   ],
   transform: {
     "^.+\\.(js|jsx)?$": "babel-jest",
