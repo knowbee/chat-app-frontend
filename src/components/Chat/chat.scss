@@ -4,9 +4,9 @@
   .logout-button{
     background-color: #2aa2fa;
     color: #fff;
-    width: 5rem;
+    width: 6rem;
     height: 2.5rem;
-    border-radius: 100px;
+    border-radius: 22px;
     border: none;
     margin-right: 1rem;
     margin-top: .5rem;
@@ -22,7 +22,10 @@
     border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
-
+    h4{
+      color: black;
+      font-size: 16px;
+    }
     .dropdown-button {
       position: fixed;
       right: 1rem;
@@ -39,6 +42,12 @@
 }
 
 @media (max-width: 999px) {
+
+  .chat{
+    .logout-button{
+      margin-right: 4rem;
+    }
+  }
   .header {
     .dropdown-button {
       display: block !important;
