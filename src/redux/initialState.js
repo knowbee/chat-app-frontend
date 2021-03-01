@@ -4,11 +4,7 @@ module.exports = {
     isLoggedIn: localStorage.getItem("token") !== null,
     chats: [],
     messages: [],
-    profile: {
-      id: "",
-      email: "",
-      name: "",
-    },
+    profile: {},
   },
   register: {
     submitting: false,
