@@ -57,19 +57,6 @@ exports[`Register page loads with default state 1`] = `
           type="password"
           value=""
         />
-        <div
-          className="terms-conditions"
-        >
-          <input
-            type="checkbox"
-          />
-          <p>
-            I accept the 
-            <span>
-              terms and conditions
-            </span>
-          </p>
-        </div>
         <button
           className="registration-button"
           onClick={[Function]}
