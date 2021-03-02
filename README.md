@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.com/knowbee/c-fe.svg?branch=master)](https://travis-ci.com/knowbee/c-fe) [![Coverage Status](https://coveralls.io/repos/github/knowbee/c-fe/badge.svg?branch=master)](https://coveralls.io/github/knowbee/c-fe?branch=master)
 
+## Performance Report
+
+![](https://iili.io/fmPdqG.png)
+
 ## Links
 
 - [Website](https://os-chat.netlify.app/)
@@ -11,15 +15,15 @@
 
 ### Login screen
 
-![Login](https://iili.io/fbXVmN.png)
+![Login](https://iili.io/fmQKGe.png)
 
 ### Registration screen
 
-![Registration](https://iili.io/fbX874.png)
+![Registration](https://iili.io/fmQf6u.png)
 
 ### Chat screen
 
-![Chat](https://iili.io/fbXsEu.png)
+![Chat](https://iili.io/fmQCaj.png)
 
 ## Getting Started
 
@@ -40,6 +44,8 @@ NPM 6.x
 ### Installing
 
 ```
+git clone <repo>
+
 yarn install
 ```
 
@@ -49,7 +55,11 @@ yarn start
 
 ## Running the tests
 
-After cloning this repo, cd into it and type `yarn run test`
+After cloning this repo, cd into it and type
+
+```
+yarn run test
+```
 
 ## Author
 
