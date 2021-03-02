@@ -5,7 +5,6 @@ import {
   SET_USER_ACTION_SUCCESS,
 } from "../../redux/action-types/currentUserTypes";
 import store from "../../redux/store";
-import { currentUser as initialState } from "../../redux/initialState";
 import { newUser } from "../../__mocks__/dummyData";
 
 describe("currentUserReducer", () => {

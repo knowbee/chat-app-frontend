@@ -38,6 +38,7 @@ function Message({ receiver_id, send, messages, fetchMessages }) {
   useEffect(() => {
     executeScroll();
   }, [messages]);
+
   useEffect(() => {
     const current_user = JSON.parse(localStorage.getItem("current_user"));
     socket.on("incomingMessage", (message) => {

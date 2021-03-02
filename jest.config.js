@@ -14,6 +14,8 @@ module.exports = {
     "node_modules",
     "src/index.js",
     "src/helpers/axiosHelper.js",
+    "src/components/Message/*",
+    "src/components/ConversationsList/*",
   ],
   transform: {
     "^.+\\.(js|jsx)?$": "babel-jest",
