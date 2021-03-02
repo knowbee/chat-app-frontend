@@ -3,7 +3,7 @@
   width: 70%;
   margin-left: 345px;
   margin-top: 8rem;
-
+  padding-bottom: 8rem;
   .message-card {
     display: flex;
 
@@ -45,17 +45,19 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    width: 100%;
-    margin-left: -1rem;
+    width: 80%;
+    margin-left: -0.6rem;
     border-left: none;
     border-bottom: none;
     border-right: none;
     border-top: 1px solid #ddd;
-
+    position: fixed;
+    bottom: 0rem;
+    background-color: #fff;
     &:focus {
       outline: none;
     }
-    input{
+    input {
       width: 80%;
       border-top: none;
       border-left: none;
@@ -65,9 +67,9 @@
   }
 
   .send-icon {
-    position: relative;
-    right: 10rem;
-    bottom:1rem;
+    position: fixed;
+    right: 2.5rem;
+    bottom: 0.6rem;
     padding-top: 1rem;
     cursor: pointer;
   }
@@ -80,5 +82,9 @@
 @media (max-width: 999px) {
   .message {
     border: none;
+
+    .input-container {
+      width: 100%;
+    }
   }
 }
