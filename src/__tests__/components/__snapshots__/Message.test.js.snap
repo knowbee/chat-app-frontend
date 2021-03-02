@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message component loads with default state 1`] = `
+<div
+  className="message"
+>
+  <div
+    className="chats"
+  >
+    <h2
+      className="no-chat"
+    >
+      No chat selected
+    </h2>
+  </div>
+  <div />
+</div>
+`;

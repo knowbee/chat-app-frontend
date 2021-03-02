@@ -2,14 +2,9 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAILURE,
   REGISTER_FORM_SUBMIT,
-  CLEAR_REGISTER_FORM,
 } from "../action-types";
 
 import axios from "../../helpers/axiosHelper";
-
-export const clearRegistrationForm = () => ({
-  type: CLEAR_REGISTER_FORM,
-});
 
 export const submitForm = (payload) => ({
   type: REGISTER_FORM_SUBMIT,
@@ -31,6 +26,7 @@ export const submitRegister = ({ name, email, password }) => (dispatch) => {
   return axios
     .post("/auth/register", { name, email, password })
     .then((data) => {
+      dispatch(submitRegisterSuccess({ submitting: false }));
       return data;
     })
     .catch((err) => {

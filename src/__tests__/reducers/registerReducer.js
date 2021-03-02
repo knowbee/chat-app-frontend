@@ -3,8 +3,6 @@ import {
   REGISTER_FAILURE,
   REGISTER_SUCCESS,
   REGISTER_FORM_SUBMIT,
-  CLEAR_REGISTER_FORM,
-  REGISTER_FORM,
 } from "../../redux/action-types/registerUserTypes";
 
 import store from "../../redux/store";
@@ -12,21 +10,6 @@ import store from "../../redux/store";
 describe("registerReducer", () => {
   test("should return the initial state", () => {
     expect(reducer(undefined, {})).toEqual(store.getState().register);
-  });
-
-  test("should handle REGISTER_FORM", () => {
-    const payload = {
-      email: "test@gmail.com",
-    };
-    const expectedState = {
-      type: REGISTER_FORM,
-      payload: { field: "email", value: "test@gmail.com" },
-    };
-    expect(reducer({}, expectedState)).toEqual({
-      ...payload,
-      errors: {},
-      message: "",
-    });
   });
 
   test("should handle REGISTER_SUCCESS", () => {

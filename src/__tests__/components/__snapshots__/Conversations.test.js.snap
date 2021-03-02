@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConversationsList component loads with default state 1`] = `
+<div
+  className="sidebar"
+>
+  <div
+    className="sidebar-header"
+  >
+     
+    <div
+      className="active"
+    >
+       
+      <p>
+        Messages
+      </p>
+    </div>
+  </div>
+  <div
+    className="sidebar-body"
+  >
+    <ul />
+  </div>
+  <div />
+</div>
+`;
