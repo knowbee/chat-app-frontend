@@ -1,17 +1,22 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import "./message.scss";
 import { connect } from "react-redux";
 import { sendMessage, fetchMessages } from "../../redux/actions";
 import { SocketContext } from "../../context/socket";
-import Moment from "react-moment";
+
 import sendIcon from "./send.svg";
 import useSound from "use-sound";
 import notification from "./message.mp3";
 import TimeAgo from "timeago-react";
+
 function Message({ receiver_id, send, messages, fetchMessages }) {
   const [message, setMessage] = useState("");
   const [sender_id, setSenderId] = useState(null);
   const [newMessage, setNewMessage] = useState({});
+
+  const bottomRef = useRef(null);
+
+  const executeScroll = () => bottomRef.current.scrollIntoView();
 
   const socket = useContext(SocketContext);
 
@@ -19,10 +24,24 @@ function Message({ receiver_id, send, messages, fetchMessages }) {
 
   const [playOn] = useSound(notification, { volume: 0.4 });
 
+  const handleSendMessage = (receiver_id, message, sender_id) => {
+    send({ receiver_id, message, sender_id });
+    setMessage("");
+  };
+
+  const handleEnterKey = (e, receiver_id, message, sender_id) => {
+    if (e.charCode === 13) {
+      handleSendMessage(receiver_id, message, sender_id);
+    }
+  };
+
+  useEffect(() => {
+    executeScroll();
+  }, [messages]);
   useEffect(() => {
     const current_user = JSON.parse(localStorage.getItem("current_user"));
     socket.on("incomingMessage", (message) => {
-      if (message.message.receiver_id == current_user.id) {
+      if (message.message.receiver_id === current_user.id) {
         playOn();
       }
       setNewMessage(message);
@@ -81,18 +100,22 @@ function Message({ receiver_id, send, messages, fetchMessages }) {
             placeholder="Type a message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            onKeyPress={(e) => {
+              handleEnterKey(e, receiver_id, message, sender_id);
+            }}
           ></input>
           <img
             className="send-icon"
             src={sendIcon}
             alt="send"
             onClick={() => {
-              send({ receiver_id, message, sender_id });
-              setMessage("");
+              handleSendMessage(receiver_id, message, sender_id);
+              executeScroll();
             }}
           />
         </div>
       ) : null}
+      <div ref={bottomRef}></div>
     </div>
   );
 }

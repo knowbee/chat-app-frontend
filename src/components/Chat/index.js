@@ -4,11 +4,17 @@ import { connect } from "react-redux";
 import Message from "../Message/index";
 import ConversationsList from "../ConversationsList/index";
 import { fetchUsers } from "../../redux/actions";
-import menu from "./menuIcon.svg";
+import menu from "./menu.png";
 
 function Chat({ fetchUsers, chats, receiver_name }) {
   const [showSidebar, setShowSidebar] = React.useState(false);
-  const Toggle = () => setShowSidebar(true);
+  const Toggle = () => {
+    if (showSidebar) {
+      setShowSidebar(false);
+    } else {
+      setShowSidebar(true);
+    }
+  };
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -25,7 +31,7 @@ function Chat({ fetchUsers, chats, receiver_name }) {
     <div className="chat">
       <div className="header">
         <img
-          style={{ width: "auto" }}
+          style={{ width: "100px", height: "50px" }}
           src="https://iili.io/fi0ROQ.png"
           alt=""
         />

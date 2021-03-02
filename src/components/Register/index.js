@@ -4,6 +4,8 @@ import { submitRegister } from "../../redux/actions";
 import "./register.scss";
 import Layout from "../Layout";
 import { useHistory } from "react-router-dom";
+import { isEmail } from "validator";
+
 const Register = ({ onSubmit }) => {
   const history = useHistory();
 
@@ -13,19 +15,37 @@ const Register = ({ onSubmit }) => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
 
   const onSubmitButton = (e) => {
     e.preventDefault();
+
+    if (!isEmail(email)) {
+      setError("Invalid email");
+      return;
+    }
+    if (name.length < 1) {
+      setError("Name is required");
+      return;
+    }
+    if (password.length < 1) {
+      setError("Password is required");
+      return;
+    }
+
     onSubmit({ name, email, password }).then((res) => {
       if (res.status === 201) {
         history.push("/login");
+      } else {
+        setError("Try again later");
       }
     });
   };
   return (
     <Layout>
       <div className="registration-form">
+        <div className="error">{error}</div>
         <div className="registration-form-header">
           <img src="https://iili.io/fi0ROQ.png" alt="logo-2" />
           <ul>
