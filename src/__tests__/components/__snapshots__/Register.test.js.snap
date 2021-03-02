@@ -26,6 +26,11 @@ exports[`Register page loads with default state 1`] = `
       className="registration-form"
     >
       <div
+        className="error"
+      >
+        
+      </div>
+      <div
         className="registration-form-header"
       >
         <img

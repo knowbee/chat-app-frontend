@@ -26,6 +26,11 @@ exports[`Login page loads with default state 1`] = `
       className="login-form"
     >
       <div
+        className="error"
+      >
+        
+      </div>
+      <div
         className="login-form-header"
       >
         <img

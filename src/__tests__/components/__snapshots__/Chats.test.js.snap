@@ -12,7 +12,8 @@ exports[`Chat page loads with default state 1`] = `
       src="https://iili.io/fi0ROQ.png"
       style={
         Object {
-          "width": "auto",
+          "height": "50px",
+          "width": "100px",
         }
       }
     />
@@ -73,6 +74,7 @@ exports[`Chat page loads with default state 1`] = `
           No chat selected
         </h2>
       </div>
+      <div />
     </div>
   </div>
 </div>
