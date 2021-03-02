@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import Layout from "../Layout";
 import { useHistory } from "react-router-dom";
 import { loginUser } from "../../redux/actions";
+import { isEmail } from "validator";
+
 function Login({ login }) {
   const history = useHistory();
 
@@ -12,20 +14,38 @@ function Login({ login }) {
   };
 
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
 
   const onSubmitButton = (e) => {
     e.preventDefault();
-    login({ email, password }).then((res) => {
-      if (res.status === 200) {
-        history.push("/chat");
-      }
-    });
+
+    if (!isEmail(email)) {
+      setError("Invalid email");
+      return;
+    }
+    if (password.length < 1) {
+      setError("Password is required");
+      return;
+    }
+
+    login({ email, password })
+      .then((res) => {
+        if (res.status === 200) {
+          history.push("/chat");
+        } else {
+          setError("Invalid credentials");
+        }
+      })
+      .catch((e) => {
+        setError("Try again");
+      });
   };
 
   return (
     <Layout>
       <div className="login-form">
+        <div className="error">{error}</div>
         <div className="login-form-header">
           <img src="https://iili.io/fi0ROQ.png" alt="logo-2" />
           <ul>

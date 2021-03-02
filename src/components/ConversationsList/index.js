@@ -2,14 +2,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./sidebar.scss";
 import { connect } from "react-redux";
-import Moment from "react-moment";
 
 import {
   createReceiverId,
   createReceiverName,
   fetchMessages,
+  fetchUsers,
 } from "../../redux/actions";
-function Sidebar({ chats, saveReceiverId, saveReceiverName, fetchMessages }) {
+
+function Sidebar({
+  chats,
+  saveReceiverId,
+  saveReceiverName,
+  fetchMessages,
+  fetchUsers,
+}) {
   const [selectedUser, setSelectedUser] = useState();
 
   const chatsEndRef = useRef(null);
@@ -22,6 +29,7 @@ function Sidebar({ chats, saveReceiverId, saveReceiverName, fetchMessages }) {
   const selectChat = (chat) => {
     setSelectedUser(chat);
   };
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -53,9 +61,6 @@ function Sidebar({ chats, saveReceiverId, saveReceiverName, fetchMessages }) {
               >
                 <div className="chat">
                   <h4>{item.name}</h4>
-                  <div>
-                    <Moment format="h:mm:ss a">{item.joined_at}</Moment>
-                  </div>
                 </div>
               </div>
             </a>
@@ -71,6 +76,7 @@ export const mapDispatchToProps = (dispatch) => ({
   saveReceiverId: (id) => dispatch(createReceiverId(id)),
   saveReceiverName: (name) => dispatch(createReceiverName(name)),
   fetchMessages: (id) => dispatch(fetchMessages(id)),
+  fetchUsers: () => dispatch(fetchUsers()),
 });
 
 export default connect(null, mapDispatchToProps)(Sidebar);

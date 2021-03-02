@@ -32,3 +32,15 @@
     width: 50%;
   }
 }
+
+
+@media (max-width: 999px) {
+  .layout{
+    flex-direction: column;
+    .middle-container{
+      img{
+        padding-top: 1rem;
+      }
+    }
+  }
+}

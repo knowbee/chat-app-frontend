@@ -6,6 +6,11 @@
       width: 50%;
       margin: 5rem auto;
       padding: 2rem;
+      box-shadow: 1px -5px 10px 5px rgba(0, 0, 0, 0.116);
+      .error{
+        text-align: center;
+        color: red;
+      }
       .registration-form-header {
         border-bottom: 1px solid #ddd;
         margin-left: -2.1rem;
@@ -70,4 +75,24 @@
         }
       }
     }
+}
+
+
+@media (max-width: 999px) {
+
+  .layout {
+
+    .right-side,
+    .left-side {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .registration-form {
+        width: 70%;
+      }
+    }
+  }
+
 }

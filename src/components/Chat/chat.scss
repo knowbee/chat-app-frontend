@@ -1,7 +1,7 @@
 .chat {
   overflow-x: hidden;
 
-  .logout-button{
+  .logout-button {
     background-color: #2aa2fa;
     color: #fff;
     width: 6rem;
@@ -9,12 +9,12 @@
     border-radius: 22px;
     border: none;
     margin-right: 1rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     cursor: pointer;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
-  .logout-button:hover{
-    opacity: .8;
+  .logout-button:hover {
+    opacity: 0.8;
   }
   .header {
     position: fixed;
@@ -22,17 +22,25 @@
     border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
-    h4{
+    background-color: #fff;
+    h4 {
       color: black;
       font-size: 16px;
     }
     .dropdown-button {
       position: fixed;
-      right: 1rem;
-      top: 0.8rem;
+      right: 10rem;
+      top: 0rem;
+      background-color: #2aa2fa;
+      color: #fff;
+      width: 6rem;
+      height: 2.5rem;
+      border-radius: 22px;
+      border: none;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
       cursor: pointer;
-      background-color: #fff;
-      border: 1px solid #ddd;
+      font-size: 0.9rem;
       display: none;
     }
   }
@@ -42,18 +50,21 @@
 }
 
 @media (max-width: 999px) {
-
-  .chat{
-    .logout-button{
+  .chat {
+    .logout-button {
       margin-right: 4rem;
     }
   }
   .header {
+    h4{
+      margin-right: 4rem;
+    }
     .dropdown-button {
       display: block !important;
       .sidebar {
         position: fixed;
-        left: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: white;
         box-shadow: 10px 10px 50px #888888;
         z-index: 99;
