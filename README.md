@@ -1,4 +1,4 @@
-# c-fe
+# Frontend
 
 [![Build Status](https://travis-ci.com/knowbee/c-fe.svg?branch=master)](https://travis-ci.com/knowbee/c-fe) [![Coverage Status](https://coveralls.io/repos/github/knowbee/c-fe/badge.svg?branch=master)](https://coveralls.io/github/knowbee/c-fe?branch=master)
 
