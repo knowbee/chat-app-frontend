@@ -1,6 +1,6 @@
 # Frontend
 
-[![Build Status](https://travis-ci.com/knowbee/c-fe.svg?branch=master)](https://travis-ci.com/knowbee/c-fe) [![Coverage Status](https://coveralls.io/repos/github/knowbee/c-fe/badge.svg?branch=master)](https://coveralls.io/github/knowbee/c-fe?branch=master)
+[![Build Status](https://travis-ci.com/knowbee/c-fe.svg?branch=master)](https://travis-ci.com/knowbee/c-fe) [![Coverage Status](https://coveralls.io/repos/github/knowbee/c-fe/badge.svg?branch=master)](https://coveralls.io/github/knowbee/c-fe?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/f2a9293d78dd25e480a0/maintainability)](https://codeclimate.com/github/knowbee/c-fe/maintainability)
 
 ## Performance Report
 
