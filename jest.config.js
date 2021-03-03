@@ -13,9 +13,11 @@ module.exports = {
     "coverage",
     "node_modules",
     "src/index.js",
+    "src/App.js",
+    "src/routes.js",
     "src/helpers/axiosHelper.js",
-    "src/components/Message/*",
-    "src/components/ConversationsList/*",
+    "src/components/*",
+    "src/redux/actions/*",
   ],
   transform: {
     "^.+\\.(js|jsx)?$": "babel-jest",
